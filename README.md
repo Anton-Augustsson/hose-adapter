@@ -1,2 +1,2 @@
-# hose-adapter
-Standerd hose adapter for BOSH GCM 8 SJL Miter Saw.
+# Workshop 3D Printables
+Tools, storages and adapters is this repositores perpose.
