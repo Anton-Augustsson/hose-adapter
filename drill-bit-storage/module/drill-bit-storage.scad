@@ -7,18 +7,22 @@ $fn=90;  // accuracy
 
 // Constants (Don't change)
 storageLenght = 100; // Not Bit lenght
-maxBitLenght  = 88;  // Check bit lenght
+maxBitLenght  = 70;  // Check bit lenght
 storageWidth  = 10;  // Minimum width
 
 // Bit dependent
 bitDiameter = 4.0;
 
-// Automatic  (Don't change)
+
+
+module drillBitStorage (bitDiameter,maxBitLenght,
+	storageWidth,storageLenght){
+
+// Automatic Variables  (Don't change)
 diameterText      = str(bitDiameter);
 storageHight      = bitDiameter*0.6; 
 bitRadius         = bitDiameter/2;
-bitPositionHeight = storageHight+bitDiameter*0.2; 
-
+bitPositionHeight = storageHight+bitDiameter*0.05; 
 
 
 // Delition for crating drill track
@@ -61,7 +65,7 @@ rotate([90,0,0])
 translate([
     0,                   // x-axis
     bitPositionHeight,   // Z-axis
-    -(maxBitLenght+8)    // y-axis
+    -(maxBitLenght+12)    // y-axis
     ])  
 cylinder(
     h = maxBitLenght,    // y-axis
@@ -69,4 +73,4 @@ cylinder(
     );      
 
 // End of Delition
-}
+}}
