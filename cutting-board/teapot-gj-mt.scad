@@ -15,8 +15,8 @@ teapotDiameter = 100;
 teapotRadius = teapotDiameter/2; 
 // routerBitDepth = 3;
 
-templateLength = 190;
-templateWidth  = 190;
+templateLength = 170;
+templateWidth  = 170;
 templateHeight = 18;
 
 
