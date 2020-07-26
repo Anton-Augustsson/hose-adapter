@@ -4,14 +4,16 @@
 
 $fn=90;  // accuracy
 outerR = 52/2;  // 5.2
-innerR = 41/2-1;
+innerR = 41/2-1+0.5;
 lenght = 30; //2.5
 
-pegWidth = 1.5;
+pegWidth1 = 1.5;
+pegWidth2 = 6;
 pegDepth1 = outerR+1;
-pegDepth2 = innerR+1;
+pegDepth2 = innerR+1.5;
 
-module peg (pegDepth,l){
+module peg (pegDepth,
+    pegWidth,l){
     for(i = [0:45:360])
     rotate([0,0,i])
     translate([
@@ -25,7 +27,8 @@ module peg (pegDepth,l){
 difference () {
 
 union () {
-peg (pegDepth1,lenght);
+peg (pegDepth1,
+    pegWidth1,lenght);
 cylinder(
     h = lenght,
     r = outerR
@@ -34,7 +37,8 @@ cylinder(
 
 translate([0,0,-1])
 union () {
-peg (pegDepth2,lenght+2);
+peg (pegDepth2,
+    pegWidth2,lenght+2);
 cylinder(
     h = lenght+2,
     r = innerR
