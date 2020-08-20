@@ -2,6 +2,9 @@
     top
 */
 
+use <insert.scad>;
+use <insert-router.scad>;
+
 module top (
     thicknessMdf,
     totalWidth,
@@ -30,6 +33,7 @@ translate([
 union () {
 
 // Top
+difference (){
 translate([
     0,
     0,
@@ -38,6 +42,14 @@ cube([
     totalWidth,
     totalDepth,
     thicknessMdf]);
+
+// Removal for insert
+translate([
+    totalWidth/2,
+    totalDepth/2,
+    -1])
+insert(thicknessMdf+2);
+}    
 
 // ---------- Fence ----------
 translate([
@@ -77,6 +89,11 @@ cube([
     sliderHeight]);
     
 }
+translate([
+    totalWidth/2,
+    totalDepth/2,
+    0])
+insertRouter(thicknessMdf);
 }
 }
 
